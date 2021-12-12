@@ -1,0 +1,149 @@
+3
+5
+7
+10
+N integers.
+(a,b,c,d,e,f)
+a*b + c = d*(f+e)
+easier question
+(a,b,c) from N integers   (1,2,3,4)
+a + b = c
+a =1, b=2, c = 3
+a = 1, b = 3, c = 4
+a = 2, b = 1, c = 3
+ans = 0;
+arr = [ list of integers given in the question]
+for(int i=0;i<n;i++){
+    obj[arr[i]] = 1;
+}
+for (int i=1;i<=n;i++){
+    
+    int a = arr[i];
+    for(int j = 1; j<=n; j++){
+        int b = arr[j];
+        int x = a + b;
+        if(x in obj) count ++; //binary search, //O(1) time
+    }
+}
+Masai School will be hosting its Prom Night on 29th Feb.There would be M boys and N girls at the prom tonight. Each boy wants a girl who is strictly shorter than him. A girl can dance with only one boy and vice-versa.
+Given the heights of all the boys and girls comment whether it is possible for all boys to get a girl.
+M boys
+N girls
+B1  < B2  < B3 < B4 ....... B(M-2) ... B(M-1)  BM
+G1  < G2  < G3 < G4 ......    GN
+B1 = 10
+B2 = 14
+G1 = 6
+G2 = 12
+if (g1 < b1)
+    yes -> check for b2
+    no -> not possible.
+Greedy
+What is greedy? -> 
+not to think extremely into future, but rather think what is good for now.
+Choose the option which seems best right now. 
+-> placements.
+Greedy -> taking best option right now
+recursion/backtracking -> try out all options and check which is best.
+Greedy  vs dynammic programming (recursion + memory)
+greedy -> very easy to understand intuitively but extremely difficult to prove.
+greedy  (3 classes) -> thought process -> practice 
+Problem: 
+Fractional Knapsack (Bag) Problem (Greedy)
+You're given N metals 
+(gold, silver, copper, zinc, califormium, platinum)
+Each item has weight W and price P
+Silver -> 1 kg - 100 Rs  -> 100 Rs/kg
+Gold -> 2 kg -> 2000 Rs  -> 1000 Rs/kg
+Platinum -> 3 kg -> 3900 Rs. -> 1300 Rs/kg
+You have a bag which can carry only certain amount of weight (4.5 kg).
+And you are very greedy, and you want to take as much money you can.
+optimal answer -> (3 kg Plat + 1.5 kg Gold)
+greedy  thought -> take the costliest metal (/kg) available and keep doing it until bag gets filled.
+You're given N stones 
+(diamond, ruby, saphire, soul, emerald, topaz)
+Each item has weight W and price P
+Diamond -> 1 kg - 100 Rs
+Ruby -> 2 kg -> 2000 Rs  
+Soul -> 3 kg -> 3900 Rs.
+You cannot break the stone.  ->  0-1 Knapsack Problem (DP)
+You have to take complete stone or drop the stone.
+4.5 kg
+D1 -> 7 kg - 910 Rs -> 130 rs/kg
+D2 -> 7 kg - 910 Rs 
+D3 -> 7 kg - 910 Rs
+S1 -> 10 kg -> 1310 Rs -> 131 rs/kg
+S2 -> 10 kg -> 1310 Rs
+Bag limit = 22 kg 
+D1 + D2 + D3 = 2730
+S1 + S2 = 2620
+Greedily = take the costliest stone and check what next can you pick = not optimal answer
+What is Greedy?
+Thinking/Choosing the best available option at the point of making decision.
+Intutively
+Algorithm -> Set of Instructions
+Merge Sort (Divide Conquer), Quick Sort, Binary Search + Abstract Binary Search
+Algorithmic Paradigm (Greedy, DP, Recursion, Backtracking)
+ -> Type/nature/bucket of set of instructions
+Cooking
+Dishes ->  Boiling Technique
+       ->  Bake 
+       -> Frying
+       -> Marinate
+in usual cases
+time complexity of a recursive solution > time compl of a greedy soln.
+Elimination -> try out all possible optimization techniques, if none of them to work -> then think of a greedy a solution.
+1question -> < 1 hour   -> 3 questions in 2hours
+1 question ~ 2 hours  -> 2 questions in 3 hours.
+Railway Platform Minimization, Classroom minimization
+You want to open a new small office.
+You're given schedule of meetings in your office.
+Start Time of a meeting and End of the meeting.
+You want to make office as small as possible because I am poor.
+Each meeting needs to be in a room and you want to minimize the number of rooms. You need to tell how many rooms are required?
+Two meetings cannot happen in the same room.
+N = 4 meetings
+11 AM to 11:30 AM
+1:30 PM to 2 PM
+1:45 PM to 2:15 PM
+4 PM to 5PM
+ans = 1 rooms. (R2)
+Given N numbers (sorted). You need to count frequency of a given number.
+1st -> O(N) approach and per query of O(N)
+2nd -> O(N) approach, per query O(1) -> obj[arr[i]]++, freq(x) return obj[x]
+3rd -> upper bound, lower bound 
+C++ (DSA) , Python (Django  OJ/Codemas) (Development), JS (React/Vue)
+Microsoft
+Interned -> Cortana -> AI (bing)
+A user can have multiple windows devices.
+So lets say Cortana has to send a notification to the user.
+Current Situation: It will send notification to all devices.
+Better Situation: Designed an algorithm for this. Send notification to the device which is active or user is more likely check in next few minutes.
+1. f1 location of user, location of device  -> w1
+2. time of last use of device and current time -> w2
+Newton's Law of Cooling.
+d1 = w1 * (function(f1)) + w2 * function(f2)
+d2 = 
+ 
+You're given N devices (distance, time of use) and you have to rank the devices.
+You're given N posts (on Facebook) (likes, shares, views, recently post was made) and you have to rank the post on User's wall/timeline
+
+
+
+
+
+
+PARTIALLY ACCEPTED FOR DANCE NIGHT
+  // let obj = {};
+  //   for (let i = 0; i < m; i++) {
+  //     for (let j = i; j < n; j++) {
+  //         if (girls[j] <= boys[i]) {
+  //           obj[boys[i]] = girls[j];
+  //           break;
+  //         } 
+  //      }
+  //   }
+  // let len = Object.keys(obj).length
+  // if (len === m) return "YES";
+  // return "NO"
+
