@@ -24,6 +24,9 @@ function MinimumInArray(lo, hi, arr) {
 
 }
 
+//TC = O(n);
+//SC = O(1);
+
 
 function runProgram(input) {
 

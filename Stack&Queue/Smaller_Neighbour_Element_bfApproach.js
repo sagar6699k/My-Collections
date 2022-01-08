@@ -1,20 +1,28 @@
 function runProgram(input) {
 
-    var N = Number(input)
+    let arr = input.trim().split("\n");
+    let T = Number(arr[0]);
+    let ele = arr[1].trim().split(" ").map(Number);
+    // console.log('ele:', ele)
 
-    function strange(N, res) {
-        if (res.length <= N) return res;
+    let box = [-1];
+    for (let i = 1; i < ele.length; i++) {
+        for (let j = i-1; j >= 0; j--) {
 
-        for (let i = 1; i <= N; i++) {
-            let curr = i;
-
-            res.push(curr)
-            return strange(curr+1, res)
+           if (ele[j] < ele[i]) {
+               box.push(ele[j]);
+               break;
+           }
         }
+
+        if (box[i] == null) {
+            box.push(-1);
+        }
+        
     }
+    console.log(box.join(" "));
+
    
-    let res = [];
-    console.log(strange(N, res));
     
   
   
@@ -22,7 +30,8 @@ function runProgram(input) {
     
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
-      runProgram(`3`);
+      runProgram(`8
+      39 27 11 4 24 32 32 1`);
     } else {
       process.stdin.resume();
       process.stdin.setEncoding("ascii");

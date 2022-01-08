@@ -2,9 +2,8 @@ let res = [];
 function Permutation(arr, current) {
 
   if (current === arr.length) {
-      res.push(arr.join(" "))
-     
-      return;
+    
+      return res.push(arr.join(" "));
   }
 
   for (let i = current; i < arr.length; i++) { //0

@@ -53,21 +53,21 @@ function runProgram(input) {
     res2 = [];
     subset1(new_arr1, arr1, current1, res1)
     subset2(new_arr2, arr2, current2, res2)
-    console.log(res1);
+    // console.log(res1);
     // console.log(res2);
   
 
-  // let box = [];
-  // for (let i = 0; i < res1.length; i++) {
-  //   for (let j = 0; j < res2.length; j++) {
-  //     if (res1[i] === res2[j]) {
-  //       box.push(res[i]);
-  //     }
+  let box = [];
+  for (let i = 0; i < res1.length; i++) {
+    for (let j = 0; j < res2.length; j++) {
+      if (res1[i] === res2[j]) {
+        box.push(res[i]);
+      }
       
-  //   }
+    }
     
-  // }
-  // console.log(box); 
+  }
+  console.log(box); 
     
     }
     if (process.env.USERNAME === "Sagar Kurewar") {

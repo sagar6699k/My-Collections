@@ -1,20 +1,24 @@
-function QuickSort(array) {
-    
-}
-
-
 function runProgram(input) {
 
-    var Input = input.trim().split("\n");
-    let len = Number(Input[0].trim());
-    let array = Input[1].trim().split(" ").map(Number)
-    console.log(QuickSort(array))
-
+    var arr = input.trim().split("");
     
+  let stack = [];
+
+  for (let i = 0; i < arr.length; i++) {
+      if (stack[stack.length-1] == arr[i] && stack.length>0) {
+        stack.pop();
+      }
+
+      stack.push(arr[i])
+    
+  }
+
+  console.log(stack.join(" "));
+
+
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
-      runProgram(`5
-      2 3 1 4 5`);
+      runProgram(`aaabccddd`);
     } else {
       process.stdin.resume();
       process.stdin.setEncoding("ascii");
