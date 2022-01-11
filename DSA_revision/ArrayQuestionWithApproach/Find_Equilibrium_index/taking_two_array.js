@@ -7,7 +7,7 @@ function FindEquilibriumIndex(n, arr) {
         l_sum += arr[i];
         arr1.push(l_sum);
     }
-
+    console.log(arr1);
     //Travel form right to left and add one element
     let arr2 = [];
     let r_sum = 0; 
@@ -18,6 +18,7 @@ function FindEquilibriumIndex(n, arr) {
 
     let arr2_rev = arr2.reverse();
     //Now check in arr1 and arr2 somewhere it find same number;
+    console.log(arr2_rev);
     for (let k = 0; k < n; k++) {
         if (arr1[k] === arr2_rev[k]) {
             return k;
@@ -45,8 +46,8 @@ function runProgram(input) {
     
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
-      runProgram(`7
-      -7 1 5 2 -4 3 0`);
+      runProgram(`5
+      3 3 5 5 1`);
     } else {
       process.stdin.resume();
       process.stdin.setEncoding("ascii");

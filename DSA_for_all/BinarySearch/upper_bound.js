@@ -1,27 +1,21 @@
-function Rotate_ACW(arr, n, k){
-    if (k === n) {
-        return arr;
-    }
-    else {
+function UpperBound(arr, n, k, lo, hi) {
+    
+    let res = undefined;
+    while (lo <= hi) {
         
-        Reverse(arr, 0, k - 1);
-        Reverse(arr, k, n - 1);
-        Reverse(arr, 0, n-1);
-
-        return arr;
+        let mid = lo + Math.floor((hi - lo) / 2);
+        
+        if (arr[mid] > k) {
+            res = mid;
+            hi = mid - 1;
+        }
+        else if (arr[mid] <= k) {
+            lo = mid + 1;
+        }
+      
     }
-}
 
-function Reverse(arr, l, r) {
-    while (l<r) {
-        let temp = arr[l];
-        arr[l] = arr[r];
-        arr[r] = temp;
-
-        l++;
-        r--;
-    }
-    return arr;
+    return res;
 }
 
 
@@ -30,16 +24,22 @@ function runProgram(input) {
     var array = input.trim().split("\n");
     let [n, k] = array[0].trim().split(" ").map(Number);
     let arr = array[1].trim().split(" ").map(Number);
+    let lo = 0;
+    let hi = n - 1;
 
-    console.log(Rotate_ACW(arr, n, k));
+
+    console.log(UpperBound(arr, n, k, lo, hi));
+
    
-  //TC = O(n);
-  //SC = O(1);
+    
+  
+  
+  
     
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
-        runProgram(`7 3
-      8 9 10 7 1 4 3`);
+      runProgram(`10 3
+      0 2 4 4 5 5 7 7 9 10`);
     } else {
       process.stdin.resume();
       process.stdin.setEncoding("ascii");
@@ -59,6 +59,3 @@ function runProgram(input) {
       });
   }
     
-  
-  
-  

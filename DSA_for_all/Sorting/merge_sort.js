@@ -33,7 +33,7 @@ function Merge(arr, l, mid, r) {
     let j = 0;
     let k = l;
 
-    //Merging of two separate sorted array into one sorted array;
+    //Merging of two separate sorted array indo one sorted array;
     while (i < n1 && j < n2) {
         
         if (arr1[i] <= arr2[j]) {

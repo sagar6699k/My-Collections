@@ -1,3 +1,56 @@
 .App {
   text-align: center;
 }
+body{
+  background-color: aliceblue;
+}
+
+.Conatent_div{
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+
+}
+
+.search_div{
+  margin-top: 30px;
+}
+.search_div >input{
+  width: 30%;
+  padding: 10px;
+}
+.search_div >button{
+  padding: 10px;
+}
+
+.Country-list{
+
+  width: 30%;
+  height: 380px;
+  margin-bottom: 50px;
+  background-color: #ffffff;
+}
+
+.Searched_Country{
+  width: 40%;
+  height: 500px;
+  margin: auto;
+}
+
+.flag_img{
+  width: 100%;
+  height: 60%;
+}
+.name{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.region_div{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}

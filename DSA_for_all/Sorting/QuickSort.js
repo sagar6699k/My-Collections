@@ -1,45 +1,51 @@
-function Rotate_ACW(arr, n, k){
-    if (k === n) {
-        return arr;
+function QuickSort(arr, l, r) {
+    
+    if (l < r) {
+        let q = Partition(arr, l, r);
+        console.log(q);
+        QuickSort(arr, l, q-1)
+        QuickSort(arr, q+1, r)
     }
     else {
-        
-        Reverse(arr, 0, k - 1);
-        Reverse(arr, k, n - 1);
-        Reverse(arr, 0, n-1);
-
         return arr;
     }
 }
 
-function Reverse(arr, l, r) {
-    while (l<r) {
-        let temp = arr[l];
-        arr[l] = arr[r];
-        arr[r] = temp;
+function Partition(arr, l, r) {
+    let pivot = arr[r];
+    let i = l - 1;
 
-        l++;
-        r--;
+    for (let j = l; j < r; j++) {
+        if (arr[j] <= pivot) {
+            i++;
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
     }
-    return arr;
+
+    i++;
+    arr[i] = pivot;
+    return i
 }
+
 
 
 function runProgram(input) {
 
     var array = input.trim().split("\n");
-    let [n, k] = array[0].trim().split(" ").map(Number);
+    let n = Number(array[0].trim());
     let arr = array[1].trim().split(" ").map(Number);
 
-    console.log(Rotate_ACW(arr, n, k));
-   
-  //TC = O(n);
-  //SC = O(1);
-    
+    let l = 0;
+    let r = n - 1;
+    QuickSort(arr, l, r)
+    console.log(arr);
+
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
-        runProgram(`7 3
-      8 9 10 7 1 4 3`);
+      runProgram(`5
+      3 5 0 9 8`);
     } else {
       process.stdin.resume();
       process.stdin.setEncoding("ascii");
@@ -59,6 +65,3 @@ function runProgram(input) {
       });
   }
     
-  
-  
-  
