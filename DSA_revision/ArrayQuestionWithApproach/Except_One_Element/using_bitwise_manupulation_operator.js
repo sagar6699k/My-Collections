@@ -4,8 +4,8 @@ function CheckUnique(n, arr) {
     return arr[0];
   }
   else {
-
-    let temp = arr[0]
+                      // 1 2 1 3 2
+    let temp = arr[0] // 1 ^ 2 => 3 ^ 1 => 2 ^ 3 => 1 ^ 2 =>3 
     for (let i = 1; i < n; i++) {
         temp = temp ^ arr[i];
     }
@@ -26,16 +26,15 @@ function runProgram(input) {
       let arr = array[line].trim().split(" ").map(Number);
       line++;
 
-      console.log(CheckUnique(n, arr));
+      // console.log(CheckUnique(n, arr));
     }
 
     
-    
-  
- 
   //T.C = O(n)
   //S.C = O(1)
 
+    
+  
 
 
   

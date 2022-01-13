@@ -1,25 +1,25 @@
 function runProgram(input) {
 
-    var n = Number(input);
+    var arr = input.trim().split("");
+    let stack = [];
+    //aaabccddd
     
-    // console.log(n&(n-1));
-    //bcz 3&4=0, 7&8=0, 15&16=0; so it is following one pattern 
-    function PowerOfTwo(n) {
-        if (n === 0) {
-            return "No"
+    for (let i = 0; i < arr.length; i++) {
+
+        if (stack.length !== 0 && stack[stack.length-1] === arr[i]) {
+            stack.pop();
         }
         else {
-            let value = n&(n-1)
-            if (value == 0) {
-                return "Yes"
-            }
-            else {
-                return "No"
-            }
+            stack.push(arr[i]);
         }
     }
+    
+    if (stack.length !== 0) {
+        console.log(stack.join(""));
+    } else {
+        console.log("Empty String");
+    }
    
-    console.log(PowerOfTwo(n));
     
   
   
@@ -27,7 +27,7 @@ function runProgram(input) {
     
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
-      runProgram(`32`);
+      runProgram(`aaabccddd`);
     } else {
       process.stdin.resume();
       process.stdin.setEncoding("ascii");
@@ -47,4 +47,6 @@ function runProgram(input) {
       });
   }
     
+  
+  
   

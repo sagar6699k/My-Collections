@@ -2,12 +2,12 @@ function QuickSort(arr, l, r) {
     
     if (l < r) {
         let q = Partition(arr, l, r);
-        console.log(q);
+        // console.log(q);
         QuickSort(arr, l, q-1)
         QuickSort(arr, q+1, r)
     }
     else {
-        return arr;
+      return arr;
     }
 }
 
@@ -23,10 +23,12 @@ function Partition(arr, l, r) {
             arr[j] = temp;
         }
     }
-
-    i++;
-    arr[i] = pivot;
-    return i
+    
+        temp = arr[i+1];
+        arr[i+1] = arr[r];
+        arr[r] = temp;
+       
+    return i+1
 }
 
 

@@ -4,31 +4,27 @@ function runProgram(input) {
     let n = Number(array[0].trim());
     let arr = array[1].trim().split(" ").map(Number);
 
-    console.log(arr);
-    for (let i = 0; i < n; i++) {
-        if ((arr[i]^1) === arr[i]+1){
-          console.log("Even");
+    function Find_middle(n, arr) {
+        
+        let left_count = 0;
+        let right_count = 0;
+        for (let i = 1; i < n-1; i++) {
+            for (let j = 0; j < i; j++) {
+                if (arr[j] < arr[i]) {
+                    left_count++;
+                }
+            }
+            for (let k = i+1; k < n; k++) {
+                if (arr[k] > arr[i]) {
+                    right_count++;
+                }
+            }
+
+            if (left_count === i && right_count === n-i-1) {
+                return arr[i];
+            }
         }
-        else if ((arr[i]^1) === arr[i]-1){
-          console.log("Odd");
-        }
-       
     }
-
-  // 0 ^ 0 => 0
-  // 1 ^ 1 => 0
-  // 1 ^ 0 => 1
-  // 0 ^ 1 => 1
-  
-
-
-  // if (n ^ 1) === n+1 then => n is even number
-  // if (n ^ 1) === n-1 then => n is odd number
-
-  // Also, if n&1 === 0 then => n is even number
-  // Also, if n&1 === 1 then => n is odd number
-
-
    
     
   
@@ -37,8 +33,8 @@ function runProgram(input) {
     
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
-        runProgram(`5
-      1 2 3 4 5`);
+      runProgram(`5
+      4 3 6 7 8`);
     } else {
       process.stdin.resume();
       process.stdin.setEncoding("ascii");
@@ -58,6 +54,4 @@ function runProgram(input) {
       });
   }
     
-  
-  
   
