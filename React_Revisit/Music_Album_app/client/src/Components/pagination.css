@@ -1,0 +1,31 @@
+.pages_btn{
+    width: 25%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pages_btn>button{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(218, 215, 212);
+}
+
+.Prev_btn{
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Next_btn{
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_icon{
+    width: 80%;
+}

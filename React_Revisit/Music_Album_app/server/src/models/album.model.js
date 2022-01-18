@@ -4,6 +4,7 @@ const albumSchema = new mongoose.Schema({
     name: { type: String, required: true },
     genre: {type: String, required: true},
     year: { type: Number, required: true },
+    poster: { type: String, required: true },
     songs:[{type: mongoose.Schema.Types.ObjectId, required: true, ref:'song'}]
 },
 {

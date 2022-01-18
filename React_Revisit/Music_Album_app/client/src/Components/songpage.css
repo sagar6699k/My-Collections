@@ -1,0 +1,39 @@
+.song_row{
+    display: flex;
+    justify-content: space-around;
+    align-items:center ;
+    background-color: white;
+    margin-bottom: 20px;
+}
+.title{
+    font-weight: 400;
+}
+body{
+    background-color: aliceblue;
+}
+.song_data{
+    display: flex;
+    align-items:center ;
+    width: 80%;
+    margin-left: 50px;
+    
+}
+.song_info{
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+}
+.song_img{
+    width: 20%;
+    margin-right: 20px;
+}
+
+.play_icon>img{
+    width: 20%;
+    cursor: pointer;
+}
+
+.song_info>span:nth-child(1){
+    font-weight: 600;
+    margin-bottom: 70px;
+}

@@ -6,6 +6,7 @@ const artistSchema = new mongoose.Schema({
     name: { type: String, required: true },
     email: {type: String, required: true},
     password: { type: String, required: true , minlength:6 , maxlength:100 },
+    profile_pic: {type: String, required: true},
     albums:[{type: mongoose.Schema.Types.ObjectId, ref:'album' , required: true }]
 },
 {

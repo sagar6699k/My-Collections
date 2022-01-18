@@ -1,38 +1,38 @@
 import { useState, useEffect, useContext } from "react";
 import { AlbumConext } from "../Context/AlbumContext";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Navbar = () => {
     const [text, setText] = useState("");
     const [Data, setData] = useState(null);
-    const [SearchData, setSearchData] = useState(null);
+    
 
-    const {Albums,handleAlbum, token} = useContext(AlbumConext)
+    const {handleAlbum,handleFilterAlbum,Albums,count, token} = useContext(AlbumConext)
 
     useEffect(() => {
         getData();
        
-      }, []);
+      }, [count]);
     
       const getData = async () => {
-        let res = await fetch(
-          "http://localhost:2021/albums/"
+        let res = await axios.get(
+          `http://localhost:2021/albums/?page=${count}&size=3/`
         );
-        let data = await res.json();
-    
-        console.log(data.albums);
-        setData(data.albums)
-        handleAlbum(data.albums);
+        let Data = res.data;
+        setData(Data.albums)
+        handleAlbum(Data.albums);
       };
     
-
-    const SearchAlbum = () => {
-        // for (let i = 0; i < Data.length; i++) {
-        //   if (Data[i].name === text) {
-        //     console.log(Data[i]);
-        //     setSearchData(Data[i]);
-        //   }
-        // }
+  
+    const SearchAlbum = async () => {
+      let res = await axios.get(
+        `http://localhost:2021/albums/${text}`
+      );
+      let Data = res.data;
+      // let { songs } = Data.albums; 
+      handleFilterAlbum(Data.albums)
+      
     }
     
     const handleGenre = (e) => {
@@ -64,7 +64,7 @@ const Navbar = () => {
         <div className="filter_div">
           <label>Select Genre</label>
           <select name="" id="genre_id" onChange={handleGenre}>
-            <option selected value="Genre">All</option>
+            <option defaultValue="Genre">All</option>
             <option value="Rock">Rock</option>
             <option value="jazz">jazz</option>
             <option value="Hip-hop">Hip-hop</option>
@@ -75,7 +75,7 @@ const Navbar = () => {
 
           <label>Select Year</label>
           <select name="year" id="" onChange={handleYear}>
-            <option selected value="Year">All</option>
+            <option defaultValue="Year">All</option>
             <option value="2022">2022</option>
             <option value="2021">2021</option>
             <option value="2020">2020</option>
