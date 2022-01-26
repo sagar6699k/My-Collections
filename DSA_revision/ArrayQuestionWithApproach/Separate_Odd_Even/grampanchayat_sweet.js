@@ -65,6 +65,8 @@ function runProgram(input) {
         let arr = array[line].trim().split(" ").map(Number);
         line++;
         let q = Number(array[line].trim());
+        //if q=1 -> make even at starting
+        //if q=2 -> make odd at starting
         line++;
         
         console.log(SeparateOddEven_with_querry(n,q,arr));

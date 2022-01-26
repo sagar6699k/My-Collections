@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+
+    <style>
+        body {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9rQRgVNuEGsrTGs4OooOqY_YknBehsdx2aA&usqp=CAU");
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        #container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+
+        }
+
+        #topCont {
+            font-size: 20px;
+        }
+
+        #tbl {
+            margin-left: 60px;
+        }
+
+        th {
+            border: 1px solid rgb(177, 154, 154);
+            padding: 10px 30px;
+            border-radius: 5px;
+            background-image: linear-gradient(rgb(226, 76, 39), rgb(54, 54, 136));
+            
+            
+
+        }
+
+        .heading {
+            margin: 30px auto;
+            width: 80%;
+            height: 80px;
+            background-image: linear-gradient(rgb(226, 76, 39), rgb(54, 54, 136));
+            border-radius: 30px;
+            font-size: 40px;
+            font-weight: 600;
+            padding-top: 20px;
+        }
+
+        #secCont {
+            width: 20px 80%;
+            margin: auto;
+            display: flex;
+            font-size: 30px;
+            font-weight: 600;
+            padding: 20px;
+
+
+        }
+
+        #secCont>div:nth-child(1) {
+            width: 60%;
+            height: 60px;
+            /* border: 1px solid red; */
+            margin-right: 30px;
+        }
+
+        #secCont>div:nth-child(2) {
+            width: 20%;
+            height: 50px;
+            /* border: 1px solid red; */
+        }
+
+        .pointer{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="topCont">
+            <div class="heading">
+                Task Manager
+            </div>
+
+            <div>
+                <form>
+                    <label for="time">Date</label>
+                    <input type="date" id="date">
+                    <label for="task">Task</label>
+                    <input type="text" id="task">
+
+                    <input type="submit" value="Add">
+                </form>
+            </div>
+        </div>
+
+        <div id="secCont">
+            <div>
+                Total Task
+            </div>
+            <div id="total">
+                0
+            </div>
+        </div>
+
+        <table id="tbl">
+            <tr>
+                <thead>
+                    <th>Deadline</th>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Delete Task</th>
+                </thead>
+            </tr>
+
+        </table>
+    </div>
+
+    <script>
+        var form = document.querySelector('form');
+        var table = document.getElementById('tbl')
+        var total = document.getElementById('total')
+        var count = 0;
+
+
+        function completed(event){
+            var parent = event.target.parentNode;
+            parent.style.backgroundColor = 'green';
+            parent.style.textDecoration = 'line-through';
+        }
+         
+
+        function deleted(event){
+            var parent = event.target.parentNode;
+            parent.remove();
+            count--;
+            total.textContent = count;
+        }
+         
+        function addTask(event) {
+            event.preventDefault();
+            var time = document.getElementById('date').value;
+            var task = document.getElementById('task').value;
+
+           
+            var parent = document.querySelector("table");
+            var row = document.createElement('tr');
+
+            var c1 = document.createElement('td');
+            c1.textContent = time;
+            var c2 = document.createElement('td');
+            c2.textContent = task;
+            
+            var c3 = document.createElement('td');
+            c3.textContent = "Completed"+" "+(count+1);
+            c3.addEventListener('click', completed);
+            c3.setAttribute('class','pointer')
+            
+            var c4 = document.createElement('td');
+            c4.setAttribute('class','pointer')
+            c4.textContent = "Delete"+(count+1);
+            c4.addEventListener('click', deleted);
+
+        
+            row.appendChild(c1);
+            row.appendChild(c2);
+            row.appendChild(c3);
+            row.appendChild(c4);
+            
+
+            parent.appendChild(row);
+
+            count++;
+            total.textContent = count;
+            document.getElementById('task').value = "";
+            console.log(count);
+
+        }
+
+        form.addEventListener('submit',addTask)
+
+    </script>
+</body>
+
+</html>

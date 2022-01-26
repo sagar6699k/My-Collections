@@ -45,12 +45,6 @@ function SearchAgain(arr, lo, hi, k) {
 
 
 
-
-
-
-
-
-
 function runProgram(input) {
 
     var array = input.trim().split("\n");
@@ -81,7 +75,7 @@ function runProgram(input) {
     
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
-      runProgram(`6 6
+      runProgram(`6 9
       3 4 7 9 1 2`);
     } else {
       process.stdin.resume();

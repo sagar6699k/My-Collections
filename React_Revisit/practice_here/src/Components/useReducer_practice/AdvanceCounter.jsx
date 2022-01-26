@@ -43,7 +43,7 @@ const AdvanceCounter = () => {
       <div>
         <h2>First_Counter : {Count.first_count}</h2>
         <button onClick={() => {dispatch({type:'increment1', value:2})}}>Increament</button>
-        <button onClick={() => {dispatch({type:'decrement1', value:2})}}>Decreament</button>
+        <button onClick={() => {dispatch({type:'decrement1', value:1})}}>Decreament</button>
         <button onClick={() => {dispatch({type:'reset', value:0})}}>Reset</button>
       </div>
       <hr />

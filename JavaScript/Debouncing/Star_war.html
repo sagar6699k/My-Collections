@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartWars</title>
+
+    <style>
+        body{
+            background-image: url("https://i.pinimg.com/originals/5e/6d/ef/5e6defc11d4261d6536ab177b15e025c.gif");
+            
+        }
+        
+        #cont {
+            width: 40%;
+            margin: auto;
+            /* border: 1px solid red; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 120px;
+            color: white;
+        }
+
+        input {
+            width: 100%;
+            font-size: 30px;
+            border-radius: 20px;
+        }
+
+        #Actors_list {
+            width: 100%;
+            height: 200px;
+            /* border: 1px solid rgb(141, 129, 129); */
+            /* border-top: none;
+            overflow: scroll; */
+        }
+        #div_char{
+            display: flex;
+            justify-content: space-between;
+        }
+        #div_char:hover{
+            font-size: 20px;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="cont">
+        <img src="https://logos-download.com/wp-content/uploads/2016/09/Star_Wars_logo-1.png" style="width: 60%;margin-bottom: 20px;" alt="">
+
+        <input type="text" placeholder="Enter your favorite starWar character" oninput="debounce(main, 1000)" id="item">
+
+        <div id="Actors_list"></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    let actors_list = document.getElementById('Actors_list')
+    let timerId
+
+    async function searchActors(itm) {
+
+        let res = await fetch(`https://swapi.dev/api/people/?search=${itm}`)
+        let data = await res.json();
+
+
+        return data.results;
+    }
+
+    function appendActors(x) {
+        actors_list.innerHTML = null;
+        x.forEach(element => {
+            let div_char = document.createElement('div')
+            div_char.setAttribute('id','div_char')
+
+            let p_name = document.createElement('p');
+            p_name.innerText = element.name;
+
+            let p_gender = document.createElement('p');
+            p_gender.innerText = element.gender;
+
+            div_char.append(p_name,p_gender);
+            div_char.addEventListener('click',function (params) {
+                detail_char(element);
+            })
+
+
+            actors_list.append(div_char);
+        });
+    }
+
+
+    function detail_char(p) {
+        console.log(p);
+    }
+
+
+
+    async function main() {
+        let item = document.getElementById('item').value;
+        
+        let actors = await searchActors(item);
+        console.log('actors:', actors)
+
+        appendActors(actors)
+    }
+
+
+
+    function debounce(func, delay) {
+        let item = document.getElementById('item').value;
+
+
+        if (item.length < 3) {
+            return false;
+        }
+
+        if (timerId) {
+            clearTimeout(timerId);
+        }
+
+        timerId = setTimeout(() => {
+            func()
+        }, delay);
+    }
+
+
+
+
+    
+</script>

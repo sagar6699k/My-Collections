@@ -1,0 +1,47 @@
+body{
+    background-image: url("https://i.pinimg.com/originals/5e/6d/ef/5e6defc11d4261d6536ab177b15e025c.gif");
+   
+}
+
+.img_div{
+    width: 35%;
+    margin: 50px auto;
+}
+
+.logo_img{
+    width: 100%;
+}
+
+.input_div{
+    width: 32%;
+    margin: 50px auto;
+}
+.input_div>input{
+    width: 100%;
+    margin:  auto;
+    font-size: 25px;
+    font-family: sans-serif;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+.input_div>input:hover{
+   border: 1px solid yellow;
+}
+
+#Character_list{
+    width: 40%;
+    margin: auto;
+    color: #ffff;
+    height: 250px;
+}
+
+#item_div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+#item_div:hover{
+    font-size: 20px;
+    color: yellow;
+}

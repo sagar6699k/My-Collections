@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO list Application</title>
+
+    <style>
+        td {
+            border: 1px solid grey;
+        }
+    </style>
+</head>
+<body>
+    
+    <form>
+        <label>Name</label>
+        <input id="name" type="text" >
+
+        <label>Quantity</label>
+        <input id="quant" type="number" >
+
+        <select id="priority" >
+            <option value="low">Low</option>
+            <option value="med">Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Quantity</td>
+            <td>Priority</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        var form = document.querySelector("form");
+        var count = 1;
+
+        var addData = function(event){
+            event.preventDefault();
+            var name = document.getElementById("name").value;
+            var quantity = document.getElementById("quant").value;
+            var priority = document.getElementById("priority").value;
+            creatItem(name,quantity,priority);
+        }
+
+        var complete = function(event){
+            var parent = event.target.parentNode;
+            parent.style.background = "green";
+        }
+
+        var deleted = function(event){
+            var parent = event.target.parentNode;
+            parent.remove();
+        }
+        function creatItem(name,quantity,priority){
+            var parent = document.querySelector("table");
+            var row = document.createElement('tr');
+
+            var c1 = document.createElement('td');
+            c1.textContent = name;
+            var c2 = document.createElement('td');
+            c2.textContent = quantity;
+            var c3 = document.createElement('td');
+            c3.textContent = priority;
+            var c4 = document.createElement('td');
+            c4.textContent = "Mark Completed"+count;
+            c4.addEventListener('click', complete);
+            var c5 = document.createElement('td');
+            c5.textContent = "Delete"+count;
+            c5.addEventListener('click', deleted);
+
+        
+            row.appendChild(c1);
+            row.appendChild(c2);
+            row.appendChild(c3);
+            row.appendChild(c4);
+            row.appendChild(c5);
+
+            parent.appendChild(row);
+            count++;
+        }
+
+        form.addEventListener("submit", addData)
+    </script>
+</body>
+</html>

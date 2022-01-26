@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>imgur</title>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Imgur_Title_Screen_Image.svg/1280px-Imgur_Title_Screen_Image.svg.png" alt="" class="logo_img">
+
+        <button class="newpost_btn"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828930.png" alt="" class="plus_icon"> New post</button>
+
+        <input id="input_id" type="search" placeholder="Images, #tags, @users oh my " >
+        <img src="./search.svg" alt="" class="search_btn" id="search" onclick="SearchImages()">
+
+        <button class="addfree_btn">Go Ad-Free</button>
+        <button class="signin_btn">Sign in</button>
+        <button class="signup_btn">Sign up</button>
+    </div>
+
+    <div id="content">
+        
+    </div>
+
+    <div class="manupulate_btn">
+        <button id="prev_btn" onclick="PrevPage()">Previous</button>
+        <button id="next_btn" onclick="NextPage()">Next</button>
+    </div>
+
+    <script src="./script/index.js"></script>
+</body>
+</html>

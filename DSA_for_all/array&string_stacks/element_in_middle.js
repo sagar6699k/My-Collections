@@ -6,10 +6,10 @@ function runProgram(input) {
 
     function Find_middle(n, arr) {
         
+      for (let i = 1; i < n - 1; i++) {
         let left_count = 0;
         let right_count = 0;
-        for (let i = 1; i < n-1; i++) {
-            for (let j = 0; j < i; j++) {
+            for (let j = i-1; j >= 0; j--) {
                 if (arr[j] < arr[i]) {
                     left_count++;
                 }
@@ -20,6 +20,7 @@ function runProgram(input) {
                 }
             }
 
+        
             if (left_count === i && right_count === n-i-1) {
                 return arr[i];
             }
@@ -28,7 +29,7 @@ function runProgram(input) {
    
     
   
-  
+  console.log(Find_middle(n, arr));
   
     
     }

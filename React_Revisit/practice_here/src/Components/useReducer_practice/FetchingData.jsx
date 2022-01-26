@@ -35,12 +35,11 @@ const FetchingData = () => {
 
 
 
-
-
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/todos/5')
-            .then((res) => { dispatch({ type: 'SUCCESS', payload: res.data }) })
-            .catch((error)=>{dispatch({type:"ERROR"})})
+        .then((res) => { dispatch({ type: 'SUCCESS', payload: res.data }) })
+        .catch((error)=>{dispatch({type:"ERROR"})})
+
     }, [])
 
     const [state, dispatch] = useReducer(reducer, initialState )

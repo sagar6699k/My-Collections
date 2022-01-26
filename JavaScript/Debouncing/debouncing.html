@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMDb debouncing</title>
+</head>
+
+<style>
+    body {
+        background: #000;
+        color: #ffff;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    #movies {
+        width: 100%;
+        height: 200px;
+        border: 1px solid rgb(141, 129, 129);
+        border-top: none;
+        overflow: scroll;
+    }
+
+    #cont {
+        width: 40%;
+        margin: auto;
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+
+<body>
+    <div id="cont">
+        <h1 style="display: flex; justify-content: center;">
+            <img style="width: 10%; height: 10%; margin-top: 75px; border-radius: 50%;"
+                src="https://image.shutterstock.com/image-vector/red-background-emoji-teacher-glasses-600w-1560945122.jpg"
+                alt="">
+            <img src="https://img.icons8.com/color/200/000000/netflix.png" />
+        </h1>
+
+
+        <input type="text" oninput="debounce(main,1000)" id="query" />
+
+        <div id="movies"></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    //get the input
+    //search the movie by name
+    //append to dom
+
+    let movies_div = document.getElementById('movies');
+
+    let timerId
+
+    async function searchMovies(n) {
+
+        let res = await fetch(`http://www.omdbapi.com/?s=${n}&apikey=29b6a3aa`)
+
+        let data = await res.json();
+        // console.log('data:', data)
+
+        return data.Search
+
+
+    }
+
+
+    function appendMovies(m) {
+        movies_div.innerHTML = null;
+
+        m.forEach(({ Title }) => {
+            let p = document.createElement('p');
+            p.innerText = Title;
+            movies_div.append(p);
+        });
+    }
+
+
+    async function main() {
+        let name = document.getElementById('query').value;
+        console.log('name:', name);
+
+        let movies = await searchMovies(name);
+        console.log('movies:', movies)
+
+        if (movies === undefined) {
+            return false;
+        }
+
+        appendMovies(movies)
+
+    }
+
+
+    function debounce(func, delay) {
+        let name = document.getElementById('query').value;
+        console.log('name:', name);
+
+        if (name.length < 2) {
+            return false;
+        }
+
+        if (timerId) {
+            clearTimeout(timerId);
+        }
+
+        timerId = setTimeout(() => {
+            func()
+        }, delay);
+    }
+</script>

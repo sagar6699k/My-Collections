@@ -7,12 +7,12 @@
 function MinimumInArray(lo, hi, arr) {
     
   let min;
-  while (lo < hi) {
+  while (lo <= hi) {
     let mid = lo + Math.floor((hi - lo) / 2)
     
       if (arr[mid] <= arr[0]) {
         min = arr[mid]
-        hi = mid;
+        hi = mid-1;
       }
       else {
         lo = mid+1

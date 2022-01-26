@@ -32,10 +32,9 @@ function runProgram(input) {
     SeparateOddEven(arr, n);
     console.log(arr);
    
+    //TC = O(n);
+    //SC = O(1);
     
-  
-  
-  
     
     }
     if (process.env.USERNAME === "Sagar Kurewar") {

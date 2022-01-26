@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>StarWar</title>
+</head>
+<body>
+    
+    <div id="Container">
+        <div class="img_div">
+            <img class="logo_img" src="https://logos-download.com/wp-content/uploads/2016/09/Star_Wars_logo-1.png" alt="">
+        </div>
+        
+        <div class="input_div">
+            <input type="text" placeholder="Enter your favorite starWar character" id="input_id" oninput="debounce(Main, 1000)">
+        </div>
+        
+
+        <div id="Character_list">
+        </div>
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
+

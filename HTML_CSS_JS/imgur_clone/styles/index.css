@@ -1,0 +1,121 @@
+*{
+    font-family: sans-serif;
+    background-color: rgb(27, 5, 88);
+}
+
+.navbar{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(27, 5, 88);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.logo_img{
+    width: 8%;
+    height: 50%;
+}
+
+.plus_icon{
+    width: 20%;
+}
+
+.newpost_btn{
+    display: flex;
+    width: 130px;
+    height: 50%;
+    align-items: center;
+    border: none;
+    margin-left: 30px;
+    background-color: rgb(83, 165, 83);
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.navbar>input{
+    width: 40%;
+    height: 50%;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    background-color: rgb(97, 97, 122);
+    color: rgb(238, 229, 229);
+    margin-left: 80px;
+    padding: 10px;
+}
+.navbar>input::placeholder{
+    color: rgb(185, 181, 181);
+    font-size: 20px;
+}
+
+.search_btn{
+    background-color: rgb(97, 97, 122);
+    height: 50%;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.signin_btn{
+    border: none;
+    background-color: transparent;
+    height: 50%;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    margin-left: 10px;
+    width: 100px;
+}
+.addfree_btn{
+    border: none;
+    background-color: rgb(56, 56, 236);
+    border-radius: 5px;
+    font-size: 20px;
+    width: 150px;
+    height: 50%;
+    font-weight: 500;
+    color: white;
+    margin-left: 50px;
+}
+.signup_btn{
+    border: none;
+    background-color: rgb(83, 165, 83);
+    border-radius: 5px;
+    font-size: 20px;
+    width: 100px;
+    height: 50%;
+    font-weight: 500;
+    color: white;
+    margin-left: 10px;
+}
+
+#content{
+   
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 18% 18% 18% 18% 18%;
+    grid-gap: 2%;
+    margin-top: 50px;
+}
+
+.manupulate_btn{
+    width: 150px;
+   
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+}
+.manupulate_btn>button{
+   color: #ffffff;
+    border: 1px solid pink;
+    padding: 6px;
+    border-radius: 5px;
+}
