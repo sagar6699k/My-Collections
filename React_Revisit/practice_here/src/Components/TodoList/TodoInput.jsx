@@ -1,8 +1,6 @@
 import { useState } from "react";
 
 const TodoInput = ({handleData}) => {
-
-
     const [text, setText] = useState("");
 
     const handleChange = (e) => {
@@ -10,13 +8,18 @@ const TodoInput = ({handleData}) => {
     }
 
     const AddData = () => {
-        handleData(text)
+
+        let todo = {
+            id: new Date().getTime(),
+            task: text,
+            completed: false,
+        }
+
+        handleData(todo)
+        setText("")
     }
 
 
-
-
-    
     return (
         <>
             <input type="text" value={text} onChange={handleChange} placeholder="Enter your Task"/>

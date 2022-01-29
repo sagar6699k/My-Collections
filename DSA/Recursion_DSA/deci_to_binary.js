@@ -1,10 +1,11 @@
 let DecimalToBinary = (res, N) => {
     
-    if(N === 1 || N === 0) return res.push(N)
+    if (N === 0) return 0;
 
-    res.push(N % 2);
-
-    return DecimalToBinary(res, Math.floor(N/2))
+    else {
+        DecimalToBinary(res, Math.floor(N/2))
+        res.push(N%2)
+    }
     
 }
 
@@ -23,7 +24,7 @@ function runProgram(input) {
 
         let res = [];
         DecimalToBinary(res, N);
-        console.log(res.reverse().join(""));
+        console.log(res.join(""));
     }
    
 
@@ -31,7 +32,7 @@ function runProgram(input) {
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
       runProgram(`2
-      15
+      16
       25`);
     } else {
       process.stdin.resume();

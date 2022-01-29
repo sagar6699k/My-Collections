@@ -9,7 +9,6 @@ function MergeSort(arr, l, r) {
     else {
         return;
     }
-
 }
 
 function Merge(arr, l, mid, r) {

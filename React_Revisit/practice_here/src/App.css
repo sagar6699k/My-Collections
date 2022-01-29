@@ -54,3 +54,18 @@ body{
   justify-content: space-between;
   width: 90%;
 }
+
+
+.todo_input_div{
+  width: 40%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  background: #ffffff;
+}
+.todo_input_div>div{
+  display: flex;
+  flex-direction: column;
+}

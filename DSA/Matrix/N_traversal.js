@@ -1,11 +1,11 @@
 function N_traversal(mat,sz){
     var box = [];
+    
     //up
     for(var i = mat.length-1; i>=0; i--){
         box.push(mat[i][0]);
     }
     
-
     // diagonal
     for(var i = 1; i < mat.length; i++){
 
@@ -17,7 +17,6 @@ function N_traversal(mat,sz){
 
     }
 
-    
     //up
     for(var i = mat.length-2; i>=0; i--){
         box.push(mat[i][sz-1]);

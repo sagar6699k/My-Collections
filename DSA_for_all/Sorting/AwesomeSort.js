@@ -1,3 +1,19 @@
+// Q) Sort the given Array as per given conditions
+
+// Description
+// Given an array arr[] consisting of N positive integers, the task is to sort the array such that – 
+// All even numbers must come before all odd numbers.
+// All even numbers that are divisible by 5 must come first than even numbers not divisible by 5.
+// If two even numbers are divisible by 5 then the number having a greater value will come first
+// If two even numbers were not divisible by 5 then the number having a greater index in the array will come first.
+// All odd numbers must come in relative order as they are present in the array.
+
+// Input: arr[] = {5, 10, 30, 7}
+// Output: 30 10 5 7
+// Explanation: Even numbers = [10, 30]. Odd numbers = [5, 7]. After sorting of even numbers, even numbers = [30, 10] as both 10 and 30 divisible by 5 but 30 has a larger value so it will come before 10.
+// After sorting A = [30, 10, 5, 7] as all even numbers must come before all odd numbers.
+
+
 function runProgram(input) {
 
     var array = input.trim().split("\n");
