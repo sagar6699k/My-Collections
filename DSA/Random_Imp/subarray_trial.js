@@ -1,42 +1,33 @@
-//Just different way of writting recursion program.
-//here you don't need to reverse the res.
-
-let DecimalToBinary = (res, N) => {
-    
-    if (N === 0) return 0;
-
-    else {
-        DecimalToBinary(res, Math.floor(N/2))
-        res.push(N%2)
-    }
-    
-}
-
-
-
 function runProgram(input) {
 
-    var arr = input.trim().split("\n");
+    var array = input.trim().split("\n");
+    let n = Number(array[0].trim());
+    let arr = array[1].trim().split(" ");
+    let res = [];
+    function Sub_array(arr, n) {
+        
+        for (let i = 0; i < n; i++) {
+            for (let j = i; j < n; j++) {
+                let temp = "";
+                for (let k = i; k <= j; k++) {
+                    temp = temp + arr[k];
+                }
+                res.push(temp);
+            }
+        }
 
-    let T = Number(arr[0]);
-    let line = 1;
-
-    for (let i = 1; i <= T; i++) {
-        let N = Number(arr[line].trim());
-        line++;
-
-        let res = [];
-        DecimalToBinary(res, N);
-        console.log(res.join(""));
     }
-   
-
+    Sub_array(arr, n)
+    console.log(res);
+    
+  
+  
+  
     
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
-      runProgram(`2
-      16
-      25`);
+        runProgram(`5
+      a b c d e`);
     } else {
       process.stdin.resume();
       process.stdin.setEncoding("ascii");
@@ -54,4 +45,6 @@ function runProgram(input) {
         runProgram(read);
         process.exit(0);
       });
-    }
+  }
+    
+  

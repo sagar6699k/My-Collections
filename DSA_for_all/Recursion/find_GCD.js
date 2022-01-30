@@ -35,54 +35,53 @@
 
 function GCD(a, b) {
 
-    if (b === 0) {
-        return a;
-    }
-    return GCD(b, a % b);
-    
+  if (a === 0) {
+      return b;
+  }
+  return GCD(b%a, a);
+  
 }
 
 
 function runProgram(input) {
 
-    var array = input.trim().split("\n");
-    let T = Number(array[0].trim());
-    for (let i = 1; i <= T; i++) {
-        let [a, b] = array[i].trim().split(" ").map(Number);
+  var array = input.trim().split("\n");
+  let T = Number(array[0].trim());
+  for (let i = 1; i <= T; i++) {
+      let [a, b] = array[i].trim().split(" ").map(Number);
 
-        console.log(GCD(a, b));
+      console.log(GCD(a, b));
 
-    }
-   
-    
-   
-    
-  
-  
-
-    
-    }
-    if (process.env.USERNAME === "Sagar Kurewar") {
-      runProgram(`2
-      6 9
-      2 25`);
-    } else {
-      process.stdin.resume();
-      process.stdin.setEncoding("ascii");
-      let read = "";
-      process.stdin.on("data", function (input) {
-        read += input;
-      });
-      process.stdin.on("end", function () {
-        read = read.replace(/\n$/, "");
-        read = read.replace(/\n$/, "");
-        runProgram(read);
-      });
-      process.on("SIGINT", function () {
-        read = read.replace(/\n$/, "");
-        runProgram(read);
-        process.exit(0);
-      });
   }
-    
+ 
+  
+ 
+  
+
+
+
+  
+  }
+  if (process.env.USERNAME === "Sagar Kurewar") {
+    runProgram(`2
+    8 14
+    51 68`);
+  } else {
+    process.stdin.resume();
+    process.stdin.setEncoding("ascii");
+    let read = "";
+    process.stdin.on("data", function (input) {
+      read += input;
+    });
+    process.stdin.on("end", function () {
+      read = read.replace(/\n$/, "");
+      read = read.replace(/\n$/, "");
+      runProgram(read);
+    });
+    process.on("SIGINT", function () {
+      read = read.replace(/\n$/, "");
+      runProgram(read);
+      process.exit(0);
+    });
+}
   

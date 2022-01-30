@@ -15,28 +15,24 @@ function runProgram(input) {
     var num = Number(input)
 
     function SumDigit(num) {
-
-        if ((num >= 0) && (num < 10))  return num;
-           
-        else 
-            var dig = num.toString().split("").map(Number)
-            var sum = 0;
-            for (var i = 0; i < dig.length; i++) {
-                sum += dig[i] 
-            }
-            return SumDigit(sum)
-            
+        if ((num >= 1) && (num < 10))  return num;
         
-        
+        else {
+            return num % 10 + SumDigit(Math.floor(num / 10));
+        }
     }
    
-    console.log(SumDigit(num));
+    let res = SumDigit(num);
+    while (res >= 10) {
+        res = SumDigit(res);
+    }
+    console.log(res);
   
   
     
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
-      runProgram(`38`);
+      runProgram(`12345`);
     } else {
       process.stdin.resume();
       process.stdin.setEncoding("ascii");

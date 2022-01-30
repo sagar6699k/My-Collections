@@ -11,6 +11,7 @@ const SumOfSubarray = (arr, n, k) => {
     let i = 0;
     let j = 0;
 
+  //Its simple brutefoce using while loop;
     while (i < n && j < n) {
         
         sum += arr[j];
