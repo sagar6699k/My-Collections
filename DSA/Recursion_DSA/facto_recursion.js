@@ -2,7 +2,6 @@ function runProgram(input) {
 
     var n = Number(input)
     
-   
     function fact(n) {
         if (n == 1 || n == 0) {
             return 1

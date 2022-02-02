@@ -23,3 +23,15 @@ console.log(7 > 6 > 5); // false
 console.log(Math.max()); // its ans is -infinity
 //bcz when we do console.log(Math.max(1,2,3)), it first compaire 1 with lowest possible which is -infinity
 //therefore console.log(Math.max()) is -infinity
+
+//tricky4
+// const obj = { 'id': 'ssd123' };
+// const arr = [...obj];
+// console.log(arr);// it will throw TypeError: object is not iterable.
+
+//tricky5
+function Num(a, b, a) {
+    console.log(a, b, a);
+}
+
+Num(1,2,3) // output is 3 2 3 why?

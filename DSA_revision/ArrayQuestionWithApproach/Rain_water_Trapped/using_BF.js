@@ -1,4 +1,4 @@
-// Givennnon-negative integers representing an elevation map where the width of each bar is 1, calculate how much rain water will be trapped after it rains.
+// Given non-negative integers representing an elevation map where the width of each bar is 1, calculate how much rain water will be trapped after it rains.
 
 //TC = O(n^2);
 //SC = O(1);

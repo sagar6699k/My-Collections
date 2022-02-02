@@ -1,0 +1,31 @@
+.board{
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    background-color: cadetblue;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.row{
+    flex: 33%;
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid red; */
+}
+.box{
+    flex: 33%;
+    height: 100%;
+    border: 1px solid rgb(29, 25, 85);
+    cursor: pointer;
+    font-size: 35px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box:active{
+    background-color: rgb(91, 136, 138);
+}

@@ -3,7 +3,7 @@
 
 let DecimalToBinary = (res, N) => {
     
-    if (N === 0) return 0;
+    if (N === 0) return ;
 
     else {
         DecimalToBinary(res, Math.floor(N/2))

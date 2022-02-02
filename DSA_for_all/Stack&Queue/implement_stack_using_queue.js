@@ -42,6 +42,12 @@ function runProgram(input) {
     }
   
 
+    //all the functions are same, only name change
+    //enqueue becomes put
+    //dequeue becomes get
+    //stack1 becomes queue1
+    //stack2 becomes queue2
+
 
 
 

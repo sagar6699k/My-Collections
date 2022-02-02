@@ -31,6 +31,8 @@ function runProgram(input) {
    console.log(BinarySearch(lo, hi, arr, k));
     
   
+  //TC = O(logn)
+  //SC = O(1)
   
   
     

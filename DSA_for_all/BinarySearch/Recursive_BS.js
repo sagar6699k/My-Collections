@@ -22,6 +22,9 @@ function RecursiveBinarySearch(arr, len, k, lo, hi) {
 
 }
 
+//TC = O(logn)
+//SC = O(logn)
+
 
 function runProgram(input) {
 
