@@ -1,3 +1,17 @@
+// Given the constants of quadratic equation F(x) = Ax2 + Bx + C as A, B, and C and an integer K, the task is to find the smallest value of root x such that F(x) ≥ K and x > 0. If no such values exist then print “-1”. It is given that F(x) is a monotonically increasing function.
+
+
+// Input: A = 3, B = 4, C = 5, K = 6
+// Output: 1
+// Explanation:
+// For the given values F(x) = 3x2 + 4x + 5 the minimum value of x is 1, F(x) = 12, which is greater than the given value of K.
+
+// Input: A = 3, B = 4, C = 5, K = 150
+// Output: 7
+// Explanation: 
+// For the given values F(x) = 3x2 + 4x + 5 the minimum value of x is 7, F(x) = 180, which is greater than the given value of K.
+
+
 function SolveEquation(lo, hi, a, b, c, k) {
     let res = undefined;
     while (lo <= hi) {
