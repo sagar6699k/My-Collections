@@ -1,39 +1,48 @@
 function SolveEquation(lo, hi, a, b, c, k) {
-    let first = -1;
-    while (lo < hi) {
+    let res = undefined;
+    while (lo <= hi) {
         let mid = lo + Math.floor((hi - lo) / 2);
 
-        let value = a*(mid ** 2) + b*mid + c;
+        let value = (a*(mid ** 2)) + (b*mid) + c;
 
         if (value >= k) {
-            first = mid;
-            hi = mid;
+            res = mid;
+            hi = mid - 1;
         }
         else {
-            lo = mid+1
+            lo = mid + 1;
         }
 
     }
-    return first;
+    return res;
 }
 
 function runProgram(input) {
     var array = input.trim().split("\n");
     let T = Number(array[0].trim());
-    let line = 1;
+   
 
-    for (let i = line; i <= T; i++) {
-        var [a, b, c, k] = array[line].trim().split(" ").map(Number);
-
-        let lo = -1;
+    for (let i = 1; i <= T; i++) {
+        var [a, b, c, k] = array[i].trim().split(" ").map(Number);
+        
+        let lo = 0;
         let hi = k;
 
-        console.log(SolveEquation(lo, hi, a, b, c, k));
+        // console.log(SolveEquation(lo, hi, a, b, c, k));
+        let res = SolveEquation(lo, hi, a, b, c, k);
+        console.log(res);
+        if (res) {
+            console.log(res);
+        }
+        else {
+            console.log(-1);
+        }
     }
 }
 if (process.env.USERNAME === "Sagar Kurewar") {
-    runProgram(`1
-    3 2 4 15`);
+    runProgram(`2
+    3 4 5 6
+    2 7 6 3`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

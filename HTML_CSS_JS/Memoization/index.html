@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memoization</title>
+  </head>
+  <body>
+    <h2>Look at the console</h2>
+    <h4>
+        Memoization is a programming technique which attempts to increase a function’s performance by caching its previously computed results. Each time a memoized function is called, its parameters are used to index the cache. If the data is present, then it can be returned, without executing the entire function. Otherwise the function is executed and then the result is added to the cache. Let's take an example of adding function with memoization,
+    </h4>
+  </body>
+
+  <script>
+    const Memoize = (fn) => {
+      let myCache = {};
+
+      return function (value) {
+        if (myCache[value]) {
+          console.log("Fetching from myCache");
+          return myCache[value]; // Here, myCache.value cannot be used as property name starts with the number which is not a valid JavaScript  identifier. Hence, can only be accessed using the square bracket notation.
+
+        } else {
+          console.log("Calculating result");
+          let result = fn(value);
+          myCache[value] = result;
+          return result;
+        }
+      };
+    };
+
+    function FindSquare(n) {
+      let res = 0;
+      for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+          res = res + 1;
+        }
+      }
+      return res;
+    }
+
+    let memoizedSquare = Memoize(FindSquare);
+
+    // console.time('first_call')
+    // console.log(FindSquare(100));
+    // console.timeEnd('first_call')
+
+    // console.time('first_call')
+    // console.log(FindSquare(100));
+    // console.timeEnd('first_call')
+
+    // console.time('first_call')
+    // console.log(FindSquare(100));
+    // console.timeEnd('first_call')
+    //instead of ^ above
+
+    console.time("first_call");
+    console.log(memoizedSquare(2000));
+    console.timeEnd("first_call");
+
+    console.time("second_call");
+    console.log(memoizedSquare(2000));
+    console.timeEnd("second_call");
+
+    console.time("third_call");
+    console.log(memoizedSquare(2000));
+    console.timeEnd("third_call");
+  </script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttling Demo</title>
+</head>
+<body>
+    <h2>Throttling Demo :</h2>
+    <h3>-Throttle works little different than debouncing, if user clicked button contineously then the event fired at first click and after that event fired after particuler time, so it will neglect the event which fired in between that period</h3>
+
+    <h3>-It also used to avoid the unneccessary action</h3>
+    <h5>Ex:</h5>
+    <button onclick="Throttling(Display, 2000)">Click Me</button>
+    <h3>Open the console</h3>
+</body>
+
+
+<script>
+
+
+
+function Display(e) {
+    console.log('You clicked me');
+}
+
+const Throttling = (fun,delay)=>{
+
+    let last = 0;
+    return (...arg)=>{
+        let now = new Date().getTime();
+
+        if (now-last < delay) {
+            return;
+        }
+        last = now;
+        return fun(...arg);
+    }
+    
+}
+
+
+
+</script>
+
+
+
+</html>

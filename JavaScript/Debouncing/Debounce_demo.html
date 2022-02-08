@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing Demo</title>
+</head>
+<body>
+    <h2>Debouncing Demo :</h2>
+    <h3>-In debouncing, the event will be executed only after the last click, no matter how many time you click the button.</h3>
+    <h3>-It basically used to avoid the unneccessary action</h3>
+    <h5>Ex: lets consider you are building a shopping cart, there need to click on purchase button, imagine if user clicked on purchase button twice or thrice accidently , then in such case event will be executed that much of time. So to avoid such case Debouncing technique will be usefull.</h5>
+    <button onclick="Debouncing(Display, 2000)">Click Me</button>
+    <h3>Open the console</h3>
+</body>
+
+
+<script>
+
+
+let timerId;
+function Display() {
+    console.log('You clicked me');
+}
+
+const Debouncing = (fun,delay)=>{
+
+    if (timerId) {
+        clearTimeout(timerId);
+    }
+
+    timerId = setTimeout(()=>{
+        fun();
+    },delay)
+}
+
+
+
+</script>
+
+
+
+</html>

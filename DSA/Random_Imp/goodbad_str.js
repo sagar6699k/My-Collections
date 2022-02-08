@@ -9,7 +9,7 @@ function runProgram(input) {
     //console.log(box);
 
     function GoodBadStr(str) {
-        var ans = "";
+        var ans = ""; 
        for (let i = 0; i < str.length; i++) {
            if (str[i] != str[i+1]) {
                ans += str[i];
