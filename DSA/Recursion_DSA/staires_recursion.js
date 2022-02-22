@@ -1,9 +1,9 @@
 function staires(n) {
     
-    if (n < 0) return 0;
-    if (n == 0) return 1;
+  if (n < 0) return 0;
+  if (n == 0) return 1;
 
-    return staires(n - 1) + staires(n - 2) + staires(n - 3);
+  return staires(n - 1) + staires(n - 2) + staires(n - 3);
 }
 
 

@@ -1,4 +1,4 @@
-function RotateElementBy90(N,mat){
+function RotateElementCW(N,mat){
     var top = 0
     var left = 0
     var right = N-1;
@@ -56,7 +56,7 @@ function runProgram(input) {
         matrix.push(arr[i].trim().split(" ").map(Number));
 
     }
-    RotateElementBy90(n,matrix);
+    RotateElementCW(n,matrix);
 
 }
 if (process.env.USERNAME === "Sagar Kurewar") {
