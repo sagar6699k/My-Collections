@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Car from './components/ClassComponent/Car';
+import ClassCompo from './components/ClassComponent/ClassCompo';
+import BasicTable from './components/ReactTable/BasicTable';
+import FilteringTable from './components/ReactTable/FilteringTable';
+import SortingTable from './components/ReactTable/SortingTable';
+import SearchCountry from './components/SearchCountry';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* This is Class component. */}
+      {/* <Car/>  */}
+      {/* <ClassCompo/> */}
+      {/* <SearchCountry/> */}
+      {/* <BasicTable/> */}
+      {/* <SortingTable/> */}
+      <FilteringTable />
     </div>
   );
 }

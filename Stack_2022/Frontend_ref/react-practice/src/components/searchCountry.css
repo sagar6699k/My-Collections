@@ -1,0 +1,25 @@
+
+.search_div{
+    margin-top: 30px;
+  }
+  .search_div >input{
+    width: 30%;
+    padding: 10px;
+  }
+  .search_div >button{
+    padding: 10px;
+  }
+  
+  .Country-list{
+  
+    width: 30%;
+    height: 380px;
+    margin-bottom: 50px;
+    background-color: #ffffff;
+  }
+  
+  .Searched_Country{
+    width: 40%;
+    height: 500px;
+    margin: auto;
+  }
