@@ -3,6 +3,7 @@ import Car from './components/ClassComponent/Car';
 import ClassCompo from './components/ClassComponent/ClassCompo';
 import BasicTable from './components/ReactTable/BasicTable';
 import FilteringTable from './components/ReactTable/FilteringTable';
+import PaginationTable from './components/ReactTable/PaginationTable';
 import SortingTable from './components/ReactTable/SortingTable';
 import SearchCountry from './components/SearchCountry';
 
@@ -15,7 +16,8 @@ function App() {
       {/* <SearchCountry/> */}
       {/* <BasicTable/> */}
       {/* <SortingTable/> */}
-      <FilteringTable />
+      {/* <FilteringTable /> */}
+      <PaginationTable />
     </div>
   );
 }
