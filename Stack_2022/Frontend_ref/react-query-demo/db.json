@@ -1,0 +1,64 @@
+{
+  "superheroes": [
+    {
+      "id": 1,
+      "first_name": "Frasco",
+      "last_name": "Garrold",
+      "email": "fgarrold0@woothemes.com",
+      "date_of_birth": "20/01/2018",
+      "age": 30,
+      "country": "China",
+      "phone": "1353603234"
+    },
+    {
+      "id": 2,
+      "first_name": "Frannie",
+      "last_name": "Bumpass",
+      "email": "fbumpass1@bandcamp.com",
+      "date_of_birth": "23/08/2008",
+      "age": 47,
+      "country": "Philippines",
+      "phone": "5502725741"
+    },
+    {
+      "id": 3,
+      "first_name": "Duncan",
+      "last_name": "Gammidge",
+      "email": "dgammidge2@wikimedia.org",
+      "date_of_birth": "17/06/2000",
+      "age": 35,
+      "country": "Canada",
+      "phone": "5521670453"
+    },
+    {
+      "id": 4,
+      "first_name": "Craggy",
+      "last_name": "Kilpatrick",
+      "email": "ckilpatrick3@g.co",
+      "date_of_birth": "04/08/1995",
+      "age": 28,
+      "country": "Philippines",
+      "phone": "2276309322"
+    },
+    {
+      "id": 5,
+      "first_name": "Stearne",
+      "last_name": "Brozek",
+      "email": "sbrozek4@angelfire.com",
+      "date_of_birth": "09/03/2008",
+      "age": 52,
+      "country": "France",
+      "phone": "8494223006"
+    },
+    {
+      "id": 6,
+      "first_name": "Aylmer",
+      "last_name": "Luggar",
+      "email": "aluggar5@reference.com",
+      "date_of_birth": "09/07/1998",
+      "age": 29,
+      "country": "Poland",
+      "phone": "8634873602"
+    }
+  ]
+}

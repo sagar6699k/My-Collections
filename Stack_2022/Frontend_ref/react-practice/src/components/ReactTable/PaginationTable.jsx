@@ -51,7 +51,7 @@ const BasicTable = () => {
         <tbody {...getTableBodyProps()}>
           {page.map((row) => {
             prepareRow(row);
-            return (
+            return ( 
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
