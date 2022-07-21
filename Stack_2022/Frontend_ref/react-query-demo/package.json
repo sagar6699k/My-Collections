@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@tanstack/react-query": "^4.0.5",
-    "@tanstack/react-query-devtools": "4.0.5",
+    "@tanstack/react-query": "^4.0.8",
+    "@tanstack/react-query-devtools": "^4.0.10",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -40,8 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/react-query": "^1.2.9"
   }
 }

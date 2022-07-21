@@ -3,13 +3,17 @@ import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import { Homepage } from "./components/Homepage";
 import { Superheroes } from "./components/Superheroes";
 import { RQSuperheroes } from "./components/RQSuperheroes";
-// import { QueryClientProvider, QueryClient } from "react-query";
 import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
+
+import { GithubUsers } from "./components/GithubUsers";
+import { Todo } from "./components/Todo";
+
+//Created a instance of queryClient
 const queryClient = new QueryClient();
 
 function App() {
@@ -23,10 +27,16 @@ function App() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/super-heroes">Traditional Super Heroes</Link>
+                <Link to="/super-heroes">Traditional-Super-Heroes</Link>
               </li>
               <li>
-                <Link to="/rq-super-heroes">RQ Super Heroes</Link>
+                <Link to="/rq-super-heroes">RQ-Super-Heroes</Link>
+              </li>
+              <li>
+                <Link to="/github-users">Github</Link>
+              </li>
+              <li>
+                <Link to="/todo">Todo</Link>
               </li>
             </ul>
           </nav>
@@ -34,9 +44,12 @@ function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/super-heroes" element={<Superheroes />} />
             <Route path="/rq-super-heroes" element={<RQSuperheroes />} />
+            <Route path="/github-users" element={<GithubUsers />} />
+            <Route path="/todo" element={<Todo />} />
           </Routes>
         </div>
       </Router>
+      <ReactQueryDevtools initialIsOpen={false} position={"bottom-right"}/>
     </QueryClientProvider>
   );
 }

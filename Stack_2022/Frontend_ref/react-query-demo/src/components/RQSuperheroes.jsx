@@ -2,24 +2,26 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 
-import { axios } from "axios";
+const getData = () => (
+  fetch('http://localhost:4000/superheroes').then(res =>
+      res.json()
+  )
+)
 
 export const RQSuperheroes = () => {
 
-  // const { isLoading, data } = useQuery('unique_key', () => {
-  //   return axios.get('http://localhost:4000/superheroes')
-  // })
+  const { isLoading,isFetching, error, data } 
+  = useQuery(
+    ['secret'],
+    getData,
+    {
+      cacheTime:5000 //It means data from the cache will be garbage collected after 5sec
+    }
+    )
 
-
-  const { isLoading, data } = useQuery(["secret"], async () => {
-    const { data } = await axios.get(
-      "http://localhost:4000/superheroes"
-    );
-    return data;
-  });
-
+  console.log('isLoading-->',isLoading,'isFetching-->',isFetching);
   console.log("rq-data", "-->", data);
-  
+
   if (isLoading) {
     return (
       <h2>Loading..</h2>
@@ -30,7 +32,7 @@ export const RQSuperheroes = () => {
     <div>
       <h3>I'm RQ-Superheroes Page, You can call see all the RQ-Superheroes below </h3>
       {
-        data?.data.map((hero) => {
+        data?.map((hero) => {
           return (
             <h4 key={hero.id}>
               {`Firstname is : ${hero.first_name} and Lastname is: ${hero.last_name}`}
@@ -40,4 +42,10 @@ export const RQSuperheroes = () => {
       }
     </div>
   )
+
+  if (error) {
+    return (
+      <h2>{error.message}</h2>
+    )
+  }
 }

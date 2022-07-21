@@ -20,11 +20,11 @@ useEffect(() => {
 
 
 if (isLoading) {
-  <h2>Loading...</h2>
+  return <h2>Loading...</h2>
 }
 
 if (error) {
-  <h2>{error}</h2>
+  return <h2>{error}</h2>
 }
 
   return (
