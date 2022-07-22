@@ -8,10 +8,8 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-
-
 import { GithubUsers } from "./components/GithubUsers";
-import { Todo } from "./components/Todo";
+import { TodoList } from "./components/TodoList";
 
 //Created a instance of queryClient
 const queryClient = new QueryClient();
@@ -36,7 +34,7 @@ function App() {
                 <Link to="/github-users">Github</Link>
               </li>
               <li>
-                <Link to="/todo">Todo</Link>
+                <Link to="/todoList">TodoList</Link>
               </li>
             </ul>
           </nav>
@@ -45,7 +43,7 @@ function App() {
             <Route path="/super-heroes" element={<Superheroes />} />
             <Route path="/rq-super-heroes" element={<RQSuperheroes />} />
             <Route path="/github-users" element={<GithubUsers />} />
-            <Route path="/todo" element={<Todo />} />
+            <Route path="/todoList" element={<TodoList />} />
           </Routes>
         </div>
       </Router>

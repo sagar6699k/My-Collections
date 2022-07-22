@@ -10,7 +10,7 @@ const getData = () => (
 
 export const RQSuperheroes = () => {
 
-  const { isLoading,isFetching, error, data } 
+  const { isLoading,isFetching, error, data }  
   = useQuery(
     ['secret'],
     getData,
@@ -19,7 +19,7 @@ export const RQSuperheroes = () => {
     }
     )
 
-  console.log('isLoading-->',isLoading,'isFetching-->',isFetching);
+  console.log('isLoading-->',isLoading,'isFetching-->',isFetching); //Its just for Analysis
   console.log("rq-data", "-->", data);
 
   if (isLoading) {

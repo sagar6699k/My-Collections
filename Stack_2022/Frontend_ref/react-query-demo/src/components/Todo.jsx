@@ -5,6 +5,7 @@ import {
     QueryClient,
     QueryClientProvider,
 } from '@tanstack/react-query'
+import { useState } from 'react'
 import { getTodos, postTodo } from '../utils/my-api'
 
 
@@ -30,6 +31,8 @@ export const Todo = () => {
         },
     })
 
+    const [text, setText] = useState("")
+
     return (
         <div>
             <ul>
@@ -38,11 +41,12 @@ export const Todo = () => {
                 ))}
             </ul>
 
+            <input type="text" value={text} onChange={(e)=>setText(e.target.value)} />
             <button
                 onClick={() => {
                     mutation.mutate({
                         id: Date.now(),
-                        title: 'Do Laundry',
+                        title: text,
                     })
                 }}
             >

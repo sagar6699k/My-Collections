@@ -61,13 +61,22 @@
       "phone": "8634873602"
     }
   ],
-
   "Todo": [
-    { "id": 1, "title": "Learn A" },
-    { "id": 2, "title": "Learn B" },
-    { "id": 3, "title": "Learn C" },
-    { "id": 4, "title": "Learn D" }
-  
+    {
+      "id": 1658492235034,
+      "title": "Learn GitHub"
+    },
+    {
+      "id": 1658492762050,
+      "title": "Revise React-hooks"
+    },
+    {
+      "id": 1658492780730,
+      "title": "Revise Redux"
+    },
+    {
+      "id": 1658496370540,
+      "title": "Revise Mutation"
+    }
   ]
-
 }
