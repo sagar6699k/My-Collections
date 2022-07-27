@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
+import { Link } from 'react-router-dom';
 
 //function for getting the data
 const getData = () => (
@@ -18,7 +19,11 @@ export const GithubUsers = () => {
 
     return (
         <div>
-            <h1>{data.name}</h1>
+            {/* <Link to={`/`}> */}
+                <h1>
+                    {data.name}
+                </h1>
+            {/* </Link> */}
             <p>{data.description}</p>
             <strong>👀 {data.subscribers_count}</strong>{' '}
             <strong>✨ {data.stargazers_count}</strong>{' '}

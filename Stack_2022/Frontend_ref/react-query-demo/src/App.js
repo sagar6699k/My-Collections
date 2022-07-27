@@ -10,6 +10,7 @@ import {
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { GithubUsers } from "./components/GithubUsers";
 import { TodoList } from "./components/TodoList";
+import { SingleSuperHero } from "./components/SingleSuperHero";
 
 //Created a instance of queryClient
 const queryClient = new QueryClient();
@@ -17,36 +18,36 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
         <div className="App">
           <nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link className="navbar_links" to="/">Home</Link>
               </li>
               <li>
-                <Link to="/super-heroes">Traditional-Super-Heroes</Link>
+                <Link className="navbar_links" to="/super-heroes">Traditional-Super-Heroes</Link>
               </li>
               <li>
-                <Link to="/rq-super-heroes">RQ-Super-Heroes</Link>
+                <Link className="navbar_links" to="/rq-super-heroes">RQ-Super-Heroes</Link>
               </li>
               <li>
-                <Link to="/github-users">Github</Link>
+                <Link className="navbar_links" to="/github-users">Github</Link>
               </li>
               <li>
-                <Link to="/todoList">TodoList</Link>
+                <Link className="navbar_links" to="/todoList">TodoList</Link>
               </li>
+             
             </ul>
           </nav>
           <Routes>
-            <Route path="/" element={<Homepage />} />
+            <Route exact path="/" element={<Homepage />} />
             <Route path="/super-heroes" element={<Superheroes />} />
             <Route path="/rq-super-heroes" element={<RQSuperheroes />} />
             <Route path="/github-users" element={<GithubUsers />} />
             <Route path="/todoList" element={<TodoList />} />
+            <Route path="/single-super-hero/:heroId" element={<SingleSuperHero />} />
           </Routes>
         </div>
-      </Router>
       <ReactQueryDevtools initialIsOpen={false} position={"bottom-right"}/>
     </QueryClientProvider>
   );

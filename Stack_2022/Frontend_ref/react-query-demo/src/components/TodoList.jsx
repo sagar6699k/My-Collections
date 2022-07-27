@@ -5,6 +5,7 @@ import {
 } from "@tanstack/react-query";
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { getTodos } from "../utils/my-api";
 
 const getData = () => (
@@ -45,6 +46,19 @@ export const TodoList = () => {
     }
 
 
+    //for Removing the todo into db
+    const remove_todo_mutation = useMutation(id => {
+        return axios.delete(`http://localhost:4000/Todo/${id}`)
+    },
+        {
+            onSuccess: () => {
+                // Invalidate and refetch
+                queryClient.invalidateQueries(['todo'])
+                setText("")
+            },
+        }
+    )
+
 
 
     if (isLoading) {
@@ -68,9 +82,14 @@ export const TodoList = () => {
                         {todo.title}
 
                         <span>
-                            <button className="ctr_btn" onClick={3}>Status</button>
+                            <select className="ctr_btn" onClick={3}>
+                                <option value="">In Progress</option>
+                                <option value="">Completed</option>
+                            </select>
                             <button className="ctr_btn" onClick={3}>Edit</button>
-                            <button className="ctr_btn" onClick={3}>Remove</button>
+                            <Link to={`/`}>
+                                <button className="ctr_btn" onClick={3}>Remove</button>
+                            </Link>
                         </span>
                     </li>
                 ))
