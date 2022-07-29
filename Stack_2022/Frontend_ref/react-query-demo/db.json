@@ -63,28 +63,29 @@
   ],
   "Todo": [
     {
-      "id": 1658492235034,
-      "title": "Learn GitHub"
+      "id": 1659012096207,
+      "title": "Learn redux toolkit",
+      "status": "in_progress"
     },
     {
-      "id": 1658492762050,
-      "title": "Revise React-hooks"
+      "id": 1659074201749,
+      "title": "Learn Pytrhon ",
+      "status": "in_progress"
     },
     {
-      "id": 1658492780730,
-      "title": "Revise Redux"
+      "id": 1659075163630,
+      "title": "Client Metting at 5 PM",
+      "status": "in_progress"
     },
     {
-      "id": 1658496370540,
-      "title": "Revise Mutation"
+      "id": 1659077927088,
+      "title": "Learn Javascript",
+      "status": "in_progress"
     },
     {
-      "id": 1658731825060,
-      "title": "Learn PostGreSQL"
-    },
-    {
-      "id": 1658812141996,
-      "title": "Learn Redux"
+      "id": 1659077935881,
+      "title": "Learn NodeJS",
+      "status": "in_progress"
     }
   ]
 }

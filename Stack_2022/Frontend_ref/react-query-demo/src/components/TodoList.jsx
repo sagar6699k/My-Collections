@@ -1,3 +1,4 @@
+import "./todolist.css";
 import {
     useMutation,
     useQuery,
@@ -5,24 +6,22 @@ import {
 } from "@tanstack/react-query";
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { CustomModal } from "../utils/CustomModal";
 import { getTodos } from "../utils/my-api";
+import { Link } from "react-router-dom";
 
-const getData = () => (
-    fetch('http://localhost:4000/Todo').then(res =>
-        res.json()
-    )
-)
 
 export const TodoList = () => {
 
     const [text, setText] = useState("")
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [updationId, setUpdationId] = useState(undefined)
 
     // Access the client
     const queryClient = useQueryClient()
 
     const { isLoading, error, data } = useQuery(['todo'], getTodos)
-    // console.log("Trail-Data-->", data);
+    console.log("Task-Data-->", data);
 
     // mutations are typically used to create/update/delete data or perform server side-effects. For this purpose, React Query exports a useMutation hook.
     const add_todo_mutation = useMutation(newTodo => {
@@ -42,22 +41,35 @@ export const TodoList = () => {
         add_todo_mutation.mutate({
             id: Date.now(),
             title: text,
+            status: "in_progress"
         })
     }
 
 
-    //for Removing the todo into db
-    const remove_todo_mutation = useMutation(id => {
-        return axios.delete(`http://localhost:4000/Todo/${id}`)
+
+
+    //for Removing the todo from db
+    const remove_todo_mutation = useMutation(async (id) => {
+        return await axios.delete(`http://localhost:4000/Todo/${id}`)
     },
         {
             onSuccess: () => {
                 // Invalidate and refetch
                 queryClient.invalidateQueries(['todo'])
-                setText("")
             },
         }
     )
+
+    const RemoveTodo = (deleteId) => {
+        remove_todo_mutation.mutate(deleteId)
+        console.log(deleteId);
+    }
+
+
+
+
+
+
 
 
 
@@ -74,30 +86,33 @@ export const TodoList = () => {
     }
 
     return (
-        <div className="todo_container">
-            <h2>Hey, I'm Watching👀,,,  Do your task on time🍴✨.</h2>
-            <ul className="todo_ul">
-                {data.map(todo => (
-                    <li key={todo.id}>
-                        {todo.title}
+        <>
+            <CustomModal id={updationId} isOpen={isModalOpen} onClose={() => { setIsModalOpen(false) }} />
+            <div className="todo_container">
+                <h1 className="todolist_head">✨Todolist✨</h1>
+                <h3>Hey, I'm Watching👀,,,  Do your task on time🍴.</h3>
+                <ul className="todo_ul">
+                    {data.map(todo => (
+                        <li key={todo.id}>
+                            <div className="title_div">
+                                <span className="status_light" ></span>
+                                <span className={todo.status === 'in_progress' ? "status_inprogress" : "status_completed"} ></span>
+                                {todo.title}
+                            </div>
+                
+                            <span>
+                                <button className="ctr_btn" onClick={() => { return(setIsModalOpen(true), setUpdationId(todo.id))}} >Edit</button>
+                                <button className="ctr_btn" onClick={() => { RemoveTodo(todo.id) }}>Remove</button>
+                            </span>
+                        </li>
+                    ))
+                    }
+                </ul>
 
-                        <span>
-                            <select className="ctr_btn" onClick={3}>
-                                <option value="">In Progress</option>
-                                <option value="">Completed</option>
-                            </select>
-                            <button className="ctr_btn" onClick={3}>Edit</button>
-                            <Link to={`/`}>
-                                <button className="ctr_btn" onClick={3}>Remove</button>
-                            </Link>
-                        </span>
-                    </li>
-                ))
-                }
-            </ul>
-
-            <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
-            <button onClick={AddTodo}>Add Todo</button>
-        </div>
+                <input className="todo-input" type="text" value={text} onChange={(e) => setText(e.target.value)} />
+                <button className="add_btn" onClick={AddTodo}>Add Todo</button>
+            </div>
+        </>
     )
+
 }

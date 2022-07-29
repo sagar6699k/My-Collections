@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useSingleHeroData } from "../utils/useSingleHeroData";
+import { useSingleHeroData } from "../utils/SuperHerosQueries";
 
 export const SingleSuperHero = () => {
   const { heroId } = useParams();

@@ -1,5 +1,10 @@
+import "./homepage.css";
+import { CustomModal } from "../utils/CustomModal"
+import { useState } from "react";
 
 export const Homepage = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
   return (
     <div>
       <h3>I'm homepage, You can call me Home</h3>

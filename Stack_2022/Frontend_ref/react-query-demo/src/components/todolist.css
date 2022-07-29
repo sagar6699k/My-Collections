@@ -1,0 +1,92 @@
+.todolist_head{
+background-image:
+linear-gradient(to right, rgb(163, 69, 1), rgb(135, 52, 7), rgb(106, 172, 65), rgb(6, 90, 28));
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+text-align: center;
+font-family: sans-serif;
+}
+
+h3{
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.todo_container{
+    border: 1px solid rgb(229, 224, 224);
+    border-radius: 10px;
+    width: 40%;
+    margin: auto;
+    background-color: rgb(243, 243, 200);
+    z-index: -1;
+  }
+  
+  .todo_ul li{
+    margin-top: 10px;
+    margin-right: 15px;
+    text-align: left;
+    /* background-color: aliceblue; */
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+
+    background-image:
+    linear-gradient(to right, rgb(189, 189, 172), rgb(142, 222, 215), rgb(92, 203, 194), rgb(137, 240, 164));
+    
+  }
+  
+  .ctr_btn{
+    background: transparent;
+    border: 1px solid rgb(7, 151, 81);
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  .ctr_btn:hover{
+    background: rgb(177, 76, 101);
+  }
+
+  .title_div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* .status_light{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgb(71, 146, 71);
+    margin-right: 20px;
+  } */
+  .status_inprogress{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgb(171, 61, 118);
+    margin-right: 20px;
+  }
+  .status_completed{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgb(71, 146, 71);
+    margin-right: 20px;
+  }
+  
+  .todo-input{
+    width: 80%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(37, 35, 35);
+    margin: 20px 0px 15px 25px;
+    padding: 10px;
+  }
+  
+  .add_btn{
+    padding: 8px;
+  }
