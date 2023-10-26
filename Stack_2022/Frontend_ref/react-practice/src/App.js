@@ -1,6 +1,7 @@
 import './App.css';
 import Car from './components/ClassComponent/Car';
 import ClassCompo from './components/ClassComponent/ClassCompo';
+import { Dropdown } from './components/Interactive_dropdown/Dropdown';
 import BasicTable from './components/ReactTable/BasicTable';
 import FilteringTable from './components/ReactTable/FilteringTable';
 import PaginationTable from './components/ReactTable/PaginationTable';
@@ -17,7 +18,8 @@ function App() {
       {/* <BasicTable/> */}
       {/* <SortingTable/> */}
       {/* <FilteringTable /> */}
-      <PaginationTable />
+      {/* <PaginationTable /> */}
+      <Dropdown/>
     </div>
   );
 }

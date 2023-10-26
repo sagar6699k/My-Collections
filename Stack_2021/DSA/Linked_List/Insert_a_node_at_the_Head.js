@@ -34,16 +34,16 @@ const LinkedListNode = class {
 // Complete the function below
 
 function insertNodeAtHead(head, data) {
-    
+
     let new_node = new LinkedListNode(data);
-    
-    if(head === null){
+
+    if (head === null) {
         head = new_node
         return head;
-    }else{
+    } else {
         new_node.next = head
         head = new_node;
-        
+
         return head;
     }
 

@@ -1,7 +1,7 @@
 // Description
 
-// You are given an array stored in a variable with the namearr
-// The size of the array is stored in a variable with the nameN
+// You are given an array stored in a variable with the name arr
+// The size of the array is stored in a variable with the name N
 // The value stored inNis always divisible by 4
 // You have to find the value of the equation -2*c1 + c2 + 2*c3 + c4, such that
 // The array is divided into 4 halves

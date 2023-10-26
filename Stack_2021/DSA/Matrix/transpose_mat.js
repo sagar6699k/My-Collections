@@ -6,13 +6,14 @@ function runProgram(input) {
     var c = rc[1];
     
     
-    var mat = [];
+    var mat = []
 
     for(var i = 1; i <= r; i++){
 
         mat.push(arr[i].trim().split(" ").map(Number));
 
-    }//console.log(mat);
+  }
+  // console.log("Mat", mat);
 
     for(var i = 0; i < c; i++){
             var trans = [];
@@ -25,14 +26,7 @@ function runProgram(input) {
     }
     
   
-
-
     
-    
-
-
-  
-
     
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
