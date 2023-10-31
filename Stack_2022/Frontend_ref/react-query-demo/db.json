@@ -60,5 +60,32 @@
       "country": "Poland",
       "phone": "8634873602"
     }
+  ],
+  "Todo": [
+    {
+      "id": 1659012096207,
+      "title": "Learn redux toolkit",
+      "status": "in_progress"
+    },
+    {
+      "id": 1659074201749,
+      "title": "Learn Pytrhon ",
+      "status": "in_progress"
+    },
+    {
+      "id": 1659075163630,
+      "title": "Client Metting at 5 PM",
+      "status": "in_progress"
+    },
+    {
+      "id": 1659077927088,
+      "title": "Learn Javascript",
+      "status": "in_progress"
+    },
+    {
+      "id": 1659077935881,
+      "title": "Learn NodeJS",
+      "status": "in_progress"
+    }
   ]
 }

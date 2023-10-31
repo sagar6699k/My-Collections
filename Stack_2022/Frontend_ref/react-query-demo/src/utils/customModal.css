@@ -1,0 +1,52 @@
+.overlay{
+    
+    position: fixed;
+    top: 15%;
+    left: 28%;
+    border-radius: 5px;
+    width: 45%;
+    height: 50%;
+    margin: auto;
+    background-color: rgb(237, 245, 247);
+    box-shadow: 0px 0px 10px 2px #aaaaaa;
+}
+
+.close_btn{
+    position: relative;
+    bottom: 16rem;
+    left: 97%;
+    outline: none;
+    background-color: rgb(237, 245, 247);
+    border: none;
+    cursor: pointer;
+}
+
+.close_btn:hover{
+    background-color: rgb(218, 62, 10);
+    border-radius: 2px;
+}
+.edit_btn{
+    background-color: rgb(42, 49, 131);
+    border-radius: 2px;
+    border: none;
+    color: white;
+    padding: 10px;
+}
+
+.edit-input{
+    width: 80%;
+    height: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(37, 35, 35);
+    margin: 20px 0px 15px 25px;
+    padding: 10px;
+  }
+
+  .status_div{
+    /* border: 1px solid red; */
+    width: 82%;
+    margin-left: 25px;
+    display: flex;
+    justify-content: space-between;
+  }

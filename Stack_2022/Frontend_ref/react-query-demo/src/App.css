@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 nav ul {
   display: flex;
   background-color: rgb(42, 49, 131);
@@ -15,10 +11,13 @@ nav ul li {
   margin-right: 16px;
   
 }
-a{
+.navbar_links{
   color: #fff;
   text-decoration: none;
 }
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
