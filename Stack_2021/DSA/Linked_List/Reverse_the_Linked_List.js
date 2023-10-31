@@ -47,8 +47,12 @@ function reverse(head) {
     }
     
     head = prev;
-    return head;
-    
+
+     // Now, you can print the reversed list.
+     while (head !== null) {
+        console.log(llist.data);
+        llist = llist.next;
+    }
     
 }
 
