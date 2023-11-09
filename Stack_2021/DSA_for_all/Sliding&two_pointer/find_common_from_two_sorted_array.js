@@ -11,6 +11,7 @@ function FindCommon(n, arr1, arr2) {
     }
     
     let arr11 = Object.keys(obj).map(Number);
+    console.log(arr11);
 
     let res = [];
     for (let i = 0; i < arr11.length; i++) {
@@ -30,6 +31,7 @@ function FindCommon(n, arr1, arr2) {
     return res.length;
 
 }
+
 
 
 

@@ -34,7 +34,7 @@ function runProgram(input) {
         stack.push(ele[i])
     }
 
-    console.log(box.reverse().join(" "));
+    console.log(box.reverse().join(" "));//-1 32 24 24 32 -1 -1 -1  
 
 
     }
