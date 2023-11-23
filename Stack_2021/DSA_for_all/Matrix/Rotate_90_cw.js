@@ -3,7 +3,7 @@ function RotateBy90(size, mat) {
   let ring = Math.floor(size / 2);
 
   for (let i = 0; i < ring; i++) {
-    for (let j = i; j < size-j-1; j++) {
+    for (let j = i; j < size-i-1; j++) {
       let temp = mat[i][j];
 
       mat[i][j] = mat[size - j - 1][i];
