@@ -1,25 +1,4 @@
-function LowerBound(n, k, arr, lo, hi) {
-    let lower = undefined;
-
-    while (lo <= hi) {
-        let mid = lo + Math.floor((hi - lo) / 2);
-
-        if (arr[mid] === k) {
-            lower = mid;
-            hi = mid - 1;
-        }
-        else if (arr[mid] < k) {
-            lo = mid + 1;
-        }
-        else {
-            hi = mid - 1;
-        }
-    }
-
-    return lower;
-}
-
-function UpperBound(n, k, arr, lo, hi) {
+function upperBound(arr, k, lo, hi) {
     let upper = undefined;
 
     while (lo <= hi) {
@@ -31,13 +10,32 @@ function UpperBound(n, k, arr, lo, hi) {
         }
         else if (arr[mid] < k) {
             lo = mid + 1;
-        }
-        else {
+        } else {
             hi = mid - 1;
         }
     }
 
     return upper;
+}
+
+function lowerBound(arr, k, lo, hi) {
+    let lower = undefined;
+
+    while (lo <= hi) {
+        let mid = lo + Math.floor((hi - lo) / 2);
+
+        if (arr[mid] === k) {
+            lower = mid;
+            hi = mid - 1;
+        }
+        else if (arr[mid] < k) {
+            lo = mid + 1;
+        } else {
+            hi = mid - 1;
+        }
+    }
+
+    return lower;
 }
 
 
@@ -50,19 +48,22 @@ function runProgram(input) {
 
     let lo = 0;
     let hi = n - 1;
-    let l = LowerBound(n, k, arr, lo, hi)
     
-    let u = UpperBound(n, k, arr, lo, hi)
+    console.log(arr, k, lo, hi);
+    let u = upperBound(arr, k, lo, hi)
+    let l = lowerBound(arr, k, lo, hi)
     
-    console.log(u-l+1);
+    console.log("Upper",u);
+    console.log("Lower",l);
+    console.log("Freq",u-l+1);
   
   
   
     
     }
     if (process.env.USERNAME === "Sagar Kurewar") {
-      runProgram(`6 3
-      2 3 3 3 6 9`);
+      runProgram(`12 4
+      1 2 3 3 3 4 4 4 4 5 6 9`);
     } else {
       process.stdin.resume();
       process.stdin.setEncoding("ascii");
