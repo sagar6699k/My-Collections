@@ -5,7 +5,7 @@
 // This process is then continued to find the second largest
 // and place it and so on until the data is sorted.
 
-//you can also arrange one uestion on this
+//you can also arrange one question on this
 //like if you asked to find 2nd max from the arr
 //bcz when i = 0 --> max element will found out and move to last index
 // and when i = 1--> 2nd max element will found and move to 2nd last position

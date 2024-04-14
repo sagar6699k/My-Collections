@@ -20,6 +20,10 @@ function balanceParanthesis(arr) {
         console.log("Not Balanced");
     }
 }
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+
 
 function runProgram(input) {
 
@@ -33,10 +37,6 @@ function runProgram(input) {
 
         balanceParanthesis(array)
     }
-
-
-
-
 
 }
 if (process.env.USERNAME === "Sagar Kurewar") {

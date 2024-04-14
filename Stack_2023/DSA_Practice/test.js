@@ -1,49 +1,33 @@
-function upperBound(arr, k, lo, hi) {
-    let upper = undefined;
+function Partition(arr, low, high) {
+  let pivot = arr[high];
+  let i = low - 1;
 
-    while (lo <= hi) {
-        let mid = lo + Math.floor((hi - lo) / 2);
-
-        if (arr[mid] === k) {
-            upper = mid;
-            lo = mid + 1;
-        }
-        else if (arr[mid] < k) {
-            lo = mid + 1;
-        } else {
-            hi = mid - 1;
-        }
+  for (let j = low; j < high; j++) {
+    if (arr[j] < pivot) {
+      i++;
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
+  }
 
-    return upper;
+  [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
+  return i + 1;
 }
 
-function lowerBound(arr, k, lo, hi) {
-    let lower = undefined;
+function quickSort(arr, low, high) {
+  if (low < high) {
+    let pi = Partition(arr, low, high);
 
-    while (lo <= hi) {
-        let mid = lo + Math.floor((hi - lo) / 2);
-
-        if (arr[mid] === k) {
-            lower = mid;
-            hi = mid - 1;
-        }
-        else if (arr[mid] < k) {
-            lo = mid + 1;
-        } else {
-            hi = mid - 1;
-        }
-    }
-
-    return lower;
+    quickSort(arr, low, pi - 1);
+    quickSort(arr, pi + 1, high);
+  }
 }
 
+//input
+let arr = [22, 20, 25, 15, 11, 10, 12];
+let n = arr.length;
+let low = 0;
+let high = n - 1;
 
-// input 
-let arr = [1, 2, 3, 3, 3, 3, 3, 3, 3, 4, 5, 5, 5, 6, 7];
-let n = arr.length
-let lo = 0;
-let hi = n - 1;
-let k = 3;
-console.log("Upper bound ->", upperBound(arr, k, lo, hi));
-console.log("Lower bound ->", lowerBound(arr, k, lo, hi));
+console.log("Before: ", arr);
+quickSort(arr, low, high)
+console.log("After: ", arr);

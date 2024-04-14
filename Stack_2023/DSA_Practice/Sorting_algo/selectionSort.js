@@ -2,7 +2,7 @@
 // selecting the smallest(or largest) element from the unsorted portion of the list
 // and moving it to the sorted portion of the list.
 
-//you can also arrange one uestion on this
+//you can also arrange one question on this
 //like you asked to find 2nd minimum from the arr
 //bcz when i = 0 --> min element will found out and move to first position
 // and when i = 1--> 2nd min element will found and move to 2nd position
