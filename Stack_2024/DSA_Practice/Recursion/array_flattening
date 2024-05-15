@@ -1,0 +1,27 @@
+let arr = [1, [2, 3], [11, 13, 32], 22, [9, [10]]];
+
+//Approach-1
+function customFlat(arr) {
+    return arr.reduce((acumulator, val) => (
+        acumulator.concat(Array.isArray(val) ? customFlat(val) : val)
+    ), [])
+}
+
+
+//Approach-2
+let res = [];
+function array_flattening(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            array_flattening(arr[i]);
+        }
+        else {
+            res.push(arr[i]);
+        }
+
+    }
+    return res;
+}
+
+// console.log("Flat array using loop: ", array_flattening(arr));
+console.log("Flat array using customFlat: ", customFlat(arr));
